@@ -184,6 +184,11 @@ struct TabItemView: View {
         .onTapGesture {
             onSelect()
         }
+        .simultaneousGesture(
+            TapGesture(count: 2).onEnded {
+                onContextAction(.rename)
+            }
+        )
         .onHover { hovering in
             // Keep icon rendering stable while hovering; only accessory/background elements animate.
             isHovered = hovering
