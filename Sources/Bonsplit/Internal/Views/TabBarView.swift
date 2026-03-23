@@ -466,15 +466,6 @@ struct TabBarView: View {
         let tooltips = controller.configuration.appearance.splitButtonTooltips
         HStack(spacing: 4) {
             Button {
-                controller.requestNewTab(kind: "terminal", inPane: pane.id)
-            } label: {
-                Image(systemName: "terminal")
-                    .font(.system(size: 12))
-            }
-            .buttonStyle(SplitActionButtonStyle(appearance: appearance))
-            .safeHelp(tooltips.newTerminal)
-
-            Button {
                 controller.requestNewTab(kind: "browser", inPane: pane.id)
             } label: {
                 Image(systemName: "globe")
